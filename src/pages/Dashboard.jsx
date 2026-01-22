@@ -1,19 +1,39 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ShoppingBag, ChefHat, Package, TrendingUp } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { ShoppingBag, ChefHat, Package, TrendingUp, CheckCircle, X, XCircle, Clock, Truck } from 'lucide-react';
 import { useOrderStore } from '../store';
 import { useRecipeStore } from '../store';
-import { formatCurrency, formatDate } from '../lib/utils';
+import { formatCurrency, formatDate, getStatusColor, getStatusLabel } from '../lib/utils';
 import LoadingSpinner from '../components/LoadingSpinner';
+import toast from 'react-hot-toast';
 
 export default function Dashboard() {
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
   const { orders, fetchOrders, isLoading: ordersLoading } = useOrderStore();
   const { purchasedRecipes, fetchPurchasedRecipes, isLoading: recipesLoading } = useRecipeStore();
+
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [successOrder, setSuccessOrder] = useState(null);
 
   useEffect(() => {
     fetchOrders();
     fetchPurchasedRecipes();
   }, [fetchOrders, fetchPurchasedRecipes]);
+
+  // Check for order success
+  useEffect(() => {
+    const orderSuccess = searchParams.get('order_success') || location.state?.orderSuccess;
+    if (orderSuccess) {
+      const order = orders.find(o => o.id === orderSuccess);
+      if (order) {
+        setSuccessOrder(order);
+        setShowSuccessModal(true);
+        // Clear URL parameter
+        window.history.replaceState({}, '', '/dashboard');
+      }
+    }
+  }, [orders, searchParams, location.state]);
 
   const recentOrders = orders.slice(0, 3);
   const totalSpent = orders.reduce((total, order) => total + order.total, 0);
@@ -53,8 +73,71 @@ export default function Dashboard() {
     );
   }
 
+  const getStatusIcon = (status) => {
+    switch (status) {
+      case 'pending':
+        return <Clock className="h-4 w-4" />;
+      case 'confirmed':
+        return <CheckCircle className="h-4 w-4" />;
+      case 'baking':
+        return <ChefHat className="h-4 w-4" />;
+      case 'out-for-delivery':
+        return <Truck className="h-4 w-4" />;
+      case 'delivered':
+        return <CheckCircle className="h-4 w-4" />;
+      default:
+        return <Clock className="h-4 w-4" />;
+    }
+  };
+
+  const canCancelOrder = (status) => {
+    return ['pending', 'confirmed'].includes(status);
+  };
+
+  const handleCancelOrder = async (orderId) => {
+    if (window.confirm('Are you sure you want to cancel this order?')) {
+      // In a real app, this would call an API
+      toast.success('Order cancellation request submitted');
+      // For demo, we'll just show the toast
+    }
+  };
+
   return (
     <div className="space-y-8">
+      {/* Order Success Modal */}
+      {showSuccessModal && successOrder && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-md w-full p-6 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <CheckCircle className="h-8 w-8 text-green-600" />
+            </div>
+            <h2 className="text-xl font-bold text-charcoal mb-2">Order Placed Successfully!</h2>
+            <p className="text-gray-600 mb-4">
+              Your order #{successOrder.id.slice(-8)} has been placed and is being processed.
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <p className="text-sm text-gray-600">Order Total: <span className="font-semibold">{formatCurrency(successOrder.total)}</span></p>
+              <p className="text-sm text-gray-600">Estimated Delivery: Within 2-3 business days</p>
+            </div>
+            <div className="flex space-x-3">
+              <button
+                onClick={() => setShowSuccessModal(false)}
+                className="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                Continue Shopping
+              </button>
+              <Link
+                to="/dashboard/orders"
+                className="flex-1 bg-donut-brown text-white px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors text-center"
+                onClick={() => setShowSuccessModal(false)}
+              >
+                Track Order
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Welcome Section */}
       <div className="bg-gradient-to-r from-cream to-blush-pink p-6 rounded-lg">
         <h1 className="text-2xl font-bold text-charcoal mb-2">Welcome back!</h1>

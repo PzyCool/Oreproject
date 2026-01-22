@@ -42,20 +42,6 @@ export default function Login() {
     });
   };
 
-  const handleDemoLogin = async (role) => {
-    const demoCredentials = {
-      customer: { email: 'customer@example.com', password: 'password' },
-      admin: { email: 'admin@example.com', password: 'admin123' }
-    };
-
-    try {
-      await login(demoCredentials[role].email, demoCredentials[role].password);
-      toast.success(`Logged in as ${role}!`);
-      navigate(from, { replace: true });
-    } catch (error) {
-      // Error is handled by the store
-    }
-  };
 
   return (
     <div className="max-w-md w-full">
@@ -123,28 +109,6 @@ export default function Login() {
         </Button>
       </form>
 
-      {/* Demo Login Buttons */}
-      <div className="mt-8 pt-6 border-t border-gray-200">
-        <p className="text-center text-sm text-gray-600 mb-4">Demo Accounts</p>
-        <div className="space-y-3">
-          <Button
-            onClick={() => handleDemoLogin('customer')}
-            variant="secondary"
-            className="w-full"
-            disabled={isLoading}
-          >
-            Login as Customer
-          </Button>
-          <Button
-            onClick={() => handleDemoLogin('admin')}
-            variant="secondary"
-            className="w-full"
-            disabled={isLoading}
-          >
-            Login as Admin
-          </Button>
-        </div>
-      </div>
 
       <div className="mt-6 text-center">
         <p className="text-gray-600">

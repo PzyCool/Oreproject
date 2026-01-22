@@ -32,9 +32,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<PublicLayout />}>
+        {/* Homepage - With Footer */}
+        <Route path="/" element={<PublicLayout showFooter={true} />}>
           <Route index element={<Home />} />
+        </Route>
+
+        {/* Other Public Routes - No Footer */}
+        <Route path="/" element={<PublicLayout showFooter={false} />}>
           <Route path="shop" element={<Shop />} />
           <Route path="shop/:id" element={<ProductDetail />} />
           <Route path="recipes" element={<Recipes />} />

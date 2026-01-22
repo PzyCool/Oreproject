@@ -116,15 +116,11 @@ npm run preview
 - Order status updates
 - View all orders and analytics
 
-## 🎮 Demo Accounts
+## 🔐 Admin Access
 
-### Customer Account
-- **Email**: `customer@example.com`
-- **Password**: `password`
+For administrative access, navigate directly to `/admin` in your browser and login with admin credentials.
 
-### Admin Account
-- **Email**: `admin@example.com`
-- **Password**: `admin123`
+**Note**: Create your own user account to test customer features, or use admin credentials for administrative functions.
 
 ## 🔧 Backend Integration
 

@@ -112,10 +112,11 @@ export default function Checkout() {
         userId: user.id
       });
 
-      // Clear cart and redirect
+      // Clear cart and redirect with success state
       clearCart();
-      toast.success('Order placed successfully!');
-      navigate(`/dashboard/orders?highlight=${order.id}`);
+      navigate(`/dashboard?order_success=${order.id}`, {
+        state: { orderSuccess: true, orderId: order.id }
+      });
 
     } catch (error) {
       toast.error(error.message || 'Payment failed. Please try again.');
