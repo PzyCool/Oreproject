@@ -38,8 +38,8 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <ChefHat className="h-8 w-8 text-donut-brown" />
-            <span className="text-xl font-bold text-donut-brown">Auntie's Bakery</span>
+            <img src="/public/marma's-logo copy.png" alt="Logo" className="h-8 w-8" />
+            <span className="text-xl font-bold text-donut-brown">marma's confectionary</span>
           </Link>
 
           {/* Desktop Navigation */}

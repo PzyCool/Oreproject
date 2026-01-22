@@ -10,8 +10,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <ChefHat className="h-8 w-8 text-accent-gold" />
-              <span className="text-xl font-bold text-accent-gold">Auntie's Bakery</span>
+              <Link to="/" className="flex items-center space-x-2">
+                <img src="/public/marma's-logo copy.png" alt="Logo" className="h-8 w-8" />
+              </Link>
+              <span className="text-xl font-bold text-accent-gold">marma's confectionary</span>
             </div>
             <p className="text-gray-300 mb-4 max-w-md">
               Freshly baked treats and secret family recipes. Bringing joy to your table,
@@ -58,16 +60,16 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-accent-gold" />
-                <span className="text-gray-300">+234 123 456 7890</span>
+                <span className="text-gray-300">+234 8103642010</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-accent-gold" />
-                <span className="text-gray-300">hello@auntiesbakery.com</span>
+                <span className="text-gray-300">damiisagirl1827@gmail.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 text-accent-gold mt-1" />
                 <span className="text-gray-300">
-                  123 Bakery Street<br />
+              23c lawal jankara,<br />
                   Lagos, Nigeria
                 </span>
               </div>
@@ -77,7 +79,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Auntie's Bakery. All rights reserved.
+            © {new Date().getFullYear()} marma's confectionary. All rights reserved.
             Made with ❤️ for delicious moments.
           </p>
         </div>

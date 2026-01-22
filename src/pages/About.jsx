@@ -5,21 +5,21 @@ export default function About() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-charcoal mb-4">About Auntie's Bakery</h1>
-        <p className="text-xl text-gray-600">Baking with love since 1985</p>
+        <h1 className="text-4xl font-bold text-charcoal mb-4">About Marma's Confectionary</h1>
+        <p className="text-xl text-gray-600">Baking with love since 2023</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
         <div>
           <h2 className="text-2xl font-bold text-charcoal mb-4">Our Story</h2>
           <p className="text-gray-600 mb-4">
-            Auntie's Bakery was founded in 1985 by Maria Rodriguez, who learned the art of baking
-            from her grandmother in a small village in Italy. What started as a weekend hobby in
-            her kitchen has grown into Lagos' most beloved bakery.
+            Marma's confectionary was founded in 2023 by damilola oni, who learned the art of baking
+            from her grandmother. What started as a daily hobby in
+            her kitchen has grown around Lagos' most beloved bakery.
           </p>
           <p className="text-gray-600 mb-4">
             We believe that baking is not just about creating delicious treats, but about bringing
-            joy and comfort to people's lives. Every loaf of bread, every cake, every cookie is
+            joy and comfort to people's lives. Every loaf of bread, every cake, every cookie, every portion of food is
             made with this philosophy in mind.
           </p>
           <p className="text-gray-600">
@@ -33,7 +33,7 @@ export default function About() {
             <ChefHat className="h-16 w-16 text-donut-brown mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-charcoal mb-2">Family Recipes</h3>
             <p className="text-gray-600">
-              Our most popular recipes come from Auntie's personal collection, perfected over
+              Our most popular recipes come from Marma's personal collection, perfected over
               decades of baking for family and friends.
             </p>
           </div>
@@ -71,9 +71,9 @@ export default function About() {
           serving fresh baked goods daily.
         </p>
         <div className="text-sm">
-          <p>📍 123 Bakery Street, Lagos, Nigeria</p>
-          <p>📞 +234 123 456 7890</p>
-          <p>🕒 Mon-Sat: 7AM-7PM | Sun: 8AM-4PM</p>
+          <p>📍 23c lawal jakara, Lagos, Nigeria</p>
+          <p>📞 +234 8103642010</p>
+          <p>🕒 Mon-Sat: 7AM-7PM | Sun: 8AM-6PM</p>
         </div>
       </div>
     </div>
