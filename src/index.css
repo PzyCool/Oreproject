@@ -1,1 +1,28 @@
 @import "tailwindcss";
+
+@layer utilities {
+  /* Auntie’s Bakery Color Palette */
+  .text-donut-brown { color: #8B5E3C; }
+  .bg-donut-brown { background-color: #8B5E3C; }
+  .border-donut-brown { border-color: #8B5E3C; }
+
+  .text-blush-pink { color: #F7B7C6; }
+  .bg-blush-pink { background-color: #F7B7C6; }
+  .border-blush-pink { border-color: #F7B7C6; }
+
+  .text-cream { color: #FFF7F2; }
+  .bg-cream { background-color: #FFF7F2; }
+  .border-cream { border-color: #FFF7F2; }
+
+  .text-charcoal { color: #1F1F1F; }
+  .bg-charcoal { background-color: #1F1F1F; }
+  .border-charcoal { border-color: #1F1F1F; }
+
+  .text-accent-gold { color: #F2C46D; }
+  .bg-accent-gold { background-color: #F2C46D; }
+  .border-accent-gold { border-color: #F2C46D; }
+
+  /* Custom shadows for bakery theme */
+  .shadow-bakery { box-shadow: 0 4px 6px -1px rgba(139, 94, 60, 0.1), 0 2px 4px -1px rgba(139, 94, 60, 0.06); }
+  .shadow-bakery-lg { box-shadow: 0 10px 15px -3px rgba(139, 94, 60, 0.1), 0 4px 6px -2px rgba(139, 94, 60, 0.05); }
+}
