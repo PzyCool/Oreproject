@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Check, ArrowRight, ArrowLeft } from 'lucide-react';
 import { useAuthStore } from '../store';
 import { useCartStore } from '../store';
@@ -392,10 +392,16 @@ export default function Checkout() {
     </div>
   );
 
-  if (!isAuthenticated() || cartItems.length === 0) {
+  if (cartItems.length === 0) {
     return (
-      <div className="flex justify-center py-12">
-        <LoadingSpinner size="lg" />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Your cart is empty</h1>
+          <p className="text-gray-600 mb-6">Add some items to your cart before checking out.</p>
+          <Link to="/shop">
+            <Button size="lg">Continue Shopping</Button>
+          </Link>
+        </div>
       </div>
     );
   }

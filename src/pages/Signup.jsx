@@ -103,6 +103,11 @@ export default function Signup() {
         </div>
         <h1 className="text-3xl font-bold text-charcoal mb-2">Join Auntie's Bakery</h1>
         <p className="text-gray-600">Create your account to start ordering</p>
+        {checkoutMessage && (
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-blue-800 text-sm">{checkoutMessage}</p>
+          </div>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

@@ -5,7 +5,7 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const getRandomDelay = () => Math.random() * 600 + 300; // 300-900ms
 
-const simulateFailure = () => Math.random() < 0.05; // 5% failure rate
+const simulateFailure = () => Math.random() < 0.01; // 1% failure rate (reduced for better UX)
 
 const getFromStorage = (key) => {
   try {
