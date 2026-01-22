@@ -17,7 +17,10 @@ export default function Home() {
     fetchRecipes();
   }, [fetchProducts, fetchRecipes]);
 
-  const featuredProducts = products.filter(p => p.featured).slice(0, 4);
+  // Show featured products first, then fill with popular products if needed
+  const featuredProducts = products
+    .filter(p => p.featured || p.popular)
+    .slice(0, 8);
   const popularRecipes = recipes.slice(0, 4);
 
   return (
@@ -55,8 +58,8 @@ export default function Home() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-charcoal mb-4">Featured Treats</h2>
-            <p className="text-gray-600">Handpicked favorites from our bakery</p>
+            <h2 className="text-3xl font-bold text-charcoal mb-4">Our Popular Treats</h2>
+            <p className="text-gray-600">Customer favorites and bakery specials</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product) => (

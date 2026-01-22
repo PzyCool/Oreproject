@@ -43,12 +43,7 @@ export default function Checkout() {
   const deliveryCost = subtotal >= freeDeliveryThreshold ? 0 : deliveryFee;
   const total = subtotal + deliveryCost;
 
-  // Redirect if not authenticated
-  useEffect(() => {
-    if (!isAuthenticated()) {
-      navigate('/login', { state: { from: '/checkout' } });
-    }
-  }, [isAuthenticated, navigate]);
+  // No longer redirecting unauthenticated users - they can checkout but need to auth before payment
 
   // Redirect if cart is empty
   useEffect(() => {
@@ -82,6 +77,18 @@ export default function Checkout() {
   };
 
   const handlePayment = async () => {
+    // Check if user is authenticated before processing payment
+    if (!isAuthenticated()) {
+      toast.error('Please sign in to complete your purchase');
+      navigate('/login', {
+        state: {
+          from: '/checkout',
+          message: 'Please sign in or create an account to complete your purchase'
+        }
+      });
+      return;
+    }
+
     setPaymentProcessing(true);
 
     try {

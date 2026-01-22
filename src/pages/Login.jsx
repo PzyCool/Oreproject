@@ -20,6 +20,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const from = location.state?.from?.pathname || '/dashboard';
+  const checkoutMessage = location.state?.message;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,6 +65,11 @@ export default function Login() {
         </div>
         <h1 className="text-3xl font-bold text-charcoal mb-2">Welcome Back</h1>
         <p className="text-gray-600">Sign in to your Auntie's Bakery account</p>
+        {checkoutMessage && (
+          <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-blue-800 text-sm">{checkoutMessage}</p>
+          </div>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ChefHat, Eye, EyeOff } from 'lucide-react';
 import Button from '../components/Button';
 import { useAuthStore } from '../store';
@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 
 export default function Signup() {
   const navigate = useNavigate();
+  const location = useLocation();
   const signup = useAuthStore((state) => state.signup);
   const isLoading = useAuthStore((state) => state.isLoading);
   const error = useAuthStore((state) => state.error);
@@ -23,6 +24,7 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [validationErrors, setValidationErrors] = useState({});
+  const checkoutMessage = location.state?.message;
 
   const handleChange = (e) => {
     setFormData({
