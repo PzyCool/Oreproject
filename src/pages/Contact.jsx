@@ -7,7 +7,7 @@ export default function Contact() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="text-center mb-16">
         <h1 className="text-4xl font-bold text-charcoal mb-4">Contact Us</h1>
-        <p className="text-xl text-gray-600">Get in touch with Auntie's Bakery</p>
+        <p className="text-xl text-gray-600">Get in touch with marma's confectionery</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -77,7 +77,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Address</h3>
-                  <p className="text-gray-600">123 Bakery Street<br />Lagos, Nigeria</p>
+                  <p className="text-gray-600">23c lawal jankara<br />Lagos, Nigeria</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Phone</h3>
-                  <p className="text-gray-600">+234 123 456 7890</p>
+                  <p className="text-gray-600">+234 810 364 2010</p>
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-charcoal">Email</h3>
-                  <p className="text-gray-600">hello@auntiesbakery.com</p>
+                  <p className="text-gray-600">damilolaisagir@gmail.com</p>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ export default function Contact() {
                   <h3 className="font-semibold text-charcoal">Hours</h3>
                   <div className="text-gray-600">
                     <p>Monday - Saturday: 7:00 AM - 7:00 PM</p>
-                    <p>Sunday: 8:00 AM - 4:00 PM</p>
+                    <p>Sunday: 8:00 AM - 6:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export default function Contact() {
               For urgent orders or custom requests, message us on WhatsApp
             </p>
             <a
-              href="https://wa.me/2341234567890"
+              href="https://wa.me/2348103642010"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -6,7 +6,7 @@ export const seedProducts = [
     category: 'cakes',
     price: 25000,
     description: 'Moist red velvet cake with cream cheese frosting, perfect for celebrations',
-    image: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/1200x/3f/90/ee/3f90eee40aa3f68b34a2088298782c2f.jpg',
     options: {
       sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)', '10-inch (serves 12-15)'],
       flavors: ['Classic Red Velvet', 'Chocolate Red Velvet'],
@@ -16,13 +16,14 @@ export const seedProducts = [
     featured: true,
     popular: true
   },
+
   {
     id: 'cake-2',
     name: 'Chocolate Fudge Cake',
     category: 'cakes',
     price: 22000,
     description: 'Rich chocolate cake layered with chocolate ganache and topped with chocolate shavings',
-    image: 'https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/1200x/25/54/24/255424feb363ec714442cf645cec757d.jpg',
     options: {
       sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)', '10-inch (serves 12-15)'],
       flavors: ['Dark Chocolate', 'Milk Chocolate'],
@@ -32,22 +33,93 @@ export const seedProducts = [
     featured: false,
     popular: true
   },
+  
+    
+
   {
-    id: 'cake-3',
-    name: 'Vanilla Buttercream Cake',
-    category: 'cakes',
-    price: 20000,
-    description: 'Light and fluffy vanilla cake with smooth buttercream frosting',
-    image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&h=400&fit=crop',
-    options: {
-      sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)', '10-inch (serves 12-15)'],
-      flavors: ['Vanilla', 'Strawberry'],
-      customMessage: true
-    },
-    stock: true,
-    featured: false,
-    popular: false
+  id: 'cake-3',
+  name: 'Vanilla Buttercream Cake',
+  category: 'cakes',
+  price: 18000,
+  description: 'Soft vanilla sponge layered with smooth buttercream frosting',
+  image: 'https://i.pinimg.com/1200x/4c/09/19/4c0919fc733981b0bdc947b366e22352.jpg',
+  options: {
+    sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)', '10-inch (serves 12-15)'],
+    flavors: ['Classic Vanilla', 'Vanilla Almond'],
+    customMessage: true
   },
+  stock: true,
+  featured: false,
+  popular: false
+},
+  
+{
+  id: 'cake-4',
+  name: 'Carrot Cake',
+  category: 'cakes',
+  price: 20000,
+  description: 'Spiced carrot cake with walnuts and cream cheese frosting',
+  image: 'https://i.pinimg.com/736x/f9/9a/98/f99a98d365506114603a197efd199ea0.jpg',
+  options: {
+    sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)'],
+    flavors: ['Classic Carrot'],
+    customMessage: true
+  },
+  stock: true,
+  featured: false,
+  popular: false
+},
+
+{
+  id: 'cake-5',
+  name: 'Fruit Cake',
+  category: 'cakes',
+  price: 30000,
+  description: 'Rich traditional fruit cake soaked with mixed fruits and spices',
+  image: 'https://i.pinimg.com/736x/f7/65/43/f76543bdb3689e75f4845e5490cbfba4.jpg',
+  options: {
+    sizes: ['8-inch (serves 8-10)', '10-inch (serves 12-15)'],
+    flavors: ['Classic Fruit'],
+    customMessage: true
+  },
+  stock: true,
+  featured: false,
+  popular: false
+},
+
+{
+  id: 'cake-6',
+  name: 'Strawberry Shortcake',
+  category: 'cakes',
+  price: 23000,
+  description: 'Light vanilla sponge layered with fresh strawberries and whipped cream',
+  image: 'https://i.pinimg.com/736x/d4/e3/3d/d4e33d6d2e1976b8ce6e78d2db515a8d.jpg',
+  options: {
+    sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)'],
+    flavors: ['Strawberry Vanilla'],
+    customMessage: true
+  },
+  stock: true,
+  featured: false,
+  popular: false
+},
+
+{
+  id: 'cake-7',
+  name: 'Lemon Drizzle Cake',
+  category: 'cakes',
+  price: 19000,
+  description: 'Moist lemon sponge soaked with tangy lemon syrup',
+  image: 'https://i.pinimg.com/736x/ee/4e/91/ee4e91c207b16d877c6c9bcdbfa27c40.jpg',
+  options: {
+    sizes: ['6-inch (serves 4-6)', '8-inch (serves 8-10)'],
+    flavors: ['Classic Lemon'],
+    customMessage: true
+  },
+  stock: true,
+  featured: false,
+  popular: false
+},
 
   // Donuts
   {
@@ -56,7 +128,7 @@ export const seedProducts = [
     category: 'donuts',
     price: 3500,
     description: 'Classic glazed donuts, freshly fried and coated in sweet glaze',
-    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/1200x/ec/6a/e8/ec6ae80a4c517ac63bd15aa9e8952248.jpg',
     options: {},
     stock: true,
     featured: true,
@@ -68,7 +140,7 @@ export const seedProducts = [
     category: 'donuts',
     price: 4000,
     description: 'Chocolate donuts topped with colorful sprinkles and chocolate glaze',
-    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/31/53/bf/3153bf66a463d79b8c1aae3b8c0c13f0.jpg',
     options: {},
     stock: true,
     featured: false,
@@ -80,12 +152,26 @@ export const seedProducts = [
     category: 'donuts',
     price: 4500,
     description: 'Cream-filled donuts with various flavors - custard, raspberry, and chocolate',
-    image: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/1200x/e9/60/06/e9600697ea1889c39bd1daf848d67a14.jpg',
     options: {},
     stock: true,
     featured: false,
     popular: false
   },
+
+
+  {
+  id: 'doughnut-4',
+  name: 'Jam-Filled Doughnut (6-pack)',
+  category: 'donuts',
+  price: 3500,
+  description: 'Soft donut filled with sweet strawberry jam and dusted with sugar',
+  image: 'https://i.pinimg.com/736x/0b/e0/b1/0be0b1a8d4b147e61cb5c5958ec879df.jpg',
+  options: {},
+    stock: true,
+    featured: false,
+    popular: false
+},
 
   // Pastries
   {
@@ -94,25 +180,114 @@ export const seedProducts = [
     category: 'pastries',
     price: 2800,
     description: 'Buttery, flaky croissants baked fresh daily',
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&h=400&fit=crop',
+    image: 'https://i.pinimg.com/736x/6e/98/8b/6e988bc5b741808a21419d20e7c35f01.jpg',
     options: {},
     stock: true,
     featured: false,
     popular: true
   },
   {
-    id: 'pastry-2',
-    name: 'Chocolate Danish (4-pack)',
-    category: 'pastries',
-    price: 3200,
-    description: 'Sweet Danish pastry filled with chocolate and topped with icing',
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&h=400&fit=crop',
-    options: {},
-    stock: true,
-    featured: false,
-    popular: false
-  },
+  id: 'pastry-2',
+  name: 'Meat Pie',
+  category: 'pastries',
+  price: 3500,
+  description: 'Flaky pastry filled with seasoned minced beef and vegetables',
+  image: 'https://i.pinimg.com/1200x/f4/a4/3c/f4a43ccb5ffb4fb0b7bd0bea053d85c2.jpg',
+  options: {
+    quantities: ['Single', 'Pack of 6', 'Pack of 12'],
+    fillings: ['Beef'],
+    customMessage: false
+  }
+},
 
+{
+  id: 'pastry-3',
+  name: 'Chicken Pie',
+  category: 'pastries',
+  price: 3800,
+  description: 'Buttery pastry filled with creamy chicken and vegetables',
+  image: 'https://i.pinimg.com/736x/13/51/14/135114137f160a0ed80ebd0d9c6a6b39.jpg',
+  options: {
+    quantities: ['Single', 'Pack of 6', 'Pack of 12'],
+    fillings: ['Chicken'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'pastry-4',
+  name: 'Scotch Egg',
+  category: 'pastries',
+  price: 3000,
+  description: 'Boiled egg wrapped in spiced minced meat and fried to golden perfection',
+  image: 'https://i.pinimg.com/736x/27/dd/ee/27ddeec66fc6200902771e30325beea8.jpg',
+  options: {
+    quantities: ['Single', 'Pack of 6', 'Pack of 12'],
+    fillings: ['Egg & Beef'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'pastry-5',
+  name: 'Sausage Roll',
+  category: 'pastries',
+  price: 2500,
+  description: 'Soft baked roll filled with seasoned sausage meat',
+  image: 'https://i.pinimg.com/1200x/07/97/e8/0797e8dd750ac65bcc84313fdc005a86.jpg',
+  options: {
+    quantities: ['Single', 'Pack of 6', 'Pack of 12'],
+    fillings: ['Sausage'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'pastry-6',
+  name: 'Chicken Shawarma',
+  category: 'shawarma',
+  price: 5500,
+  description: 'Grilled marinated chicken wrapped in flatbread with creamy garlic sauce',
+  image: 'https://i.pinimg.com/1200x/fa/5c/65/fa5c658d50ed6d70cbe5ce419029f518.jpg',
+  options: {
+    sizes: ['Regular', 'Large'],
+    proteins: ['Chicken'],
+    addOns: ['Extra Chicken', 'Cheese', 'Fries'],
+    spiceLevel: ['Mild', 'Medium', 'Hot'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'pastry-7',
+  name: 'Beef Shawarma',
+  category: 'shawarma',
+  price: 6000,
+  description: 'Juicy spiced beef shawarma wrapped with fresh vegetables and sauce',
+  image: 'https://i.pinimg.com/1200x/d4/4a/d5/d44ad564be429e615c01557675842585.jpg',
+  options: {
+    sizes: ['Regular', 'Large'],
+    proteins: ['Beef'],
+    addOns: ['Extra Beef', 'Cheese', 'Fries'],
+    spiceLevel: ['Mild', 'Medium', 'Hot'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'pastry-8',
+  name: 'Chicken Cheese Steak',
+  category: 'cheese-steak',
+  price: 6800,
+  description: 'Grilled chicken breast with melted cheese and sautéed vegetables',
+  image: 'https://images.unsplash.com/photo-1585238342028-4d1e9f1f9d5d?w=500&h=400&fit=crop',
+  options: {
+    sizes: ['Regular', 'Footlong'],
+    cheeses: ['Cheddar', 'Mozzarella'],
+    addOns: ['Extra Chicken', 'Caramelized Onions', 'Bell Peppers'],
+    customMessage: false
+  }
+},
   // Bread
   {
     id: 'bread-1',
@@ -127,19 +302,77 @@ export const seedProducts = [
     popular: false
   },
 
+  {
+  id: 'bread-2',
+  name: 'Whole Wheat Bread',
+  category: 'breads',
+  price: 2800,
+  description: 'Healthy whole wheat bread with a soft crumb and nutty flavor',
+  image: 'https://i.pinimg.com/1200x/0f/d2/a4/0fd2a4a128344aeec6ce8ba8ca518842.jpg',
+  options: {
+    loafSize: ['Small Loaf', 'Medium Loaf', 'Large Loaf'],
+    sliceType: ['Sliced', 'Unsliced'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'bread-3',
+  name: 'White Sandwich Bread',
+  category: 'breads',
+  price: 2500,
+  description: 'Soft and fluffy white bread perfect for sandwiches and toast',
+  image: 'https://i.pinimg.com/736x/f9/e5/5c/f9e55c71ff97e1e681a8c473a1614477.jpg',
+  options: {
+    loafSize: ['Small Loaf', 'Medium Loaf', 'Large Loaf'],
+    sliceType: ['Sliced', 'Unsliced'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'bread-4',
+  name: 'Butter Bread',
+  category: 'breads',
+  price: 3300,
+  description: 'Soft bread enriched with butter for a rich taste',
+  image: 'https://i.pinimg.com/1200x/cf/e1/ec/cfe1ecf4802ace8cecd85bf9c3088d4c.jpg',
+  options: {
+    loafSize: ['Small Loaf', 'Medium Loaf'],
+    sliceType: ['Sliced', 'Unsliced'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'bread-5',
+  name: 'Coconut Bread',
+  category: 'breads',
+  price: 3500,
+  description: 'Sweet bread infused with coconut milk and flakes',
+  image: 'https://i.pinimg.com/1200x/08/8f/f7/088ff76a55973023703c54fd1946d887.jpg',
+  options: {
+    loafSize: ['Small Loaf', 'Medium Loaf'],
+    sliceType: ['Sliced', 'Unsliced'],
+    customMessage: false
+  }
+},
+
+
   // Small Chops
   {
-    id: 'smallchop-1',
-    name: 'Meat Pies (6-pack)',
-    category: 'small-chops',
-    price: 6000,
-    description: 'Savory meat pies with spiced ground beef, onions, and vegetables',
-    image: 'https://images.unsplash.com/photo-1541599468348-e96984315621?w=500&h=400&fit=crop',
-    options: {},
+  id: 'smallchop-1',
+  name: 'Spring Rolls (6-pack',
+  category: 'pastries',
+  price: 2600,
+  description: 'Crispy rolls filled with vegetables and spices',
+  image: 'https://i.pinimg.com/1200x/ac/b3/bb/acb3bb4a553583542d85b70b5ebc09c8.jpg',
+  options: {},
     stock: true,
     featured: false,
-    popular: true
-  },
+    popular: false
+},
+
   {
     id: 'smallchop-2',
     name: 'Samosas (6-pack)',
@@ -152,6 +385,66 @@ export const seedProducts = [
     featured: false,
     popular: false
   },
+
+  {
+  id: 'smallchop-3',
+  name: 'Puff Puff',
+  category: 'small-chops',
+  price: 2000,
+  description: 'Soft and fluffy deep-fried dough balls, lightly sweetened',
+  image: 'https://i.pinimg.com/1200x/3d/a9/dd/3da9dd02d13dcf4d9c8e4e0c6b04a25a.jpg',
+  options: {},
+  stock: true,
+  featured: false,
+  popular: false
+},
+
+{
+  id: 'smallchop-4',
+  name: 'Honey Coated Wings',
+  category: 'small-chops',
+  price: 6500,
+  description: 'Crispy chicken wings tossed in sweet and sticky honey glaze',
+  image: 'https://i.pinimg.com/1200x/e6/e6/a3/e6e6a36b4506f799abeb7e71779a98ca.jpg',
+  options: {
+    portions: ['6 Pieces', '12 Pieces', '24 Pieces'],
+    spiceLevel: ['Mild'],
+    addOns: ['Extra Sauce', 'Fries'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'smallchop-5',
+  name: 'Peppered Wings',
+  category: 'small-chops',
+  price: 6500,
+  description: 'Spicy Nigerian-style chicken wings coated in hot pepper sauce',
+  image: 'https://i.pinimg.com/1200x/ad/59/64/ad596453d5c2e52972934d5392773278.jpg',
+  options: {
+    portions: ['6 Pieces', '12 Pieces', '24 Pieces'],
+    spiceLevel: ['Medium', 'Hot', 'Extra Hot'],
+    addOns: ['Extra Pepper Sauce', 'Fries'],
+    customMessage: false
+  }
+},
+
+{
+  id: 'smallchop-6',
+  name: 'Peppered Snail',
+  category: 'small-chops',
+  price: 8000,
+  description: 'Tender snail cooked in rich Nigerian pepper sauce',
+  image: 'https://i.pinimg.com/1200x/c0/ae/46/c0ae46de4bcfc63a538150f714364fc0.jpg',
+  options: {
+    portions: ['Small Bowl', 'Medium Bowl', 'Large Bowl'],
+    spiceLevel: ['Medium', 'Hot', 'Extra Hot'],
+    addOns: ['Extra Pepper Sauce'],
+    customMessage: false
+  }
+},
+
+
 
   // Drinks
   {

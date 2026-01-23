@@ -27,15 +27,30 @@ const saveToStorage = (key, data) => {
 
 // Initialize data if not exists
 const initializeData = () => {
-  if (!getFromStorage('products')) {
+  // Check if we're in development (localhost or has DEV flag)
+  const isDevelopment = window.location.hostname === 'localhost' || 
+                        new URLSearchParams(window.location.search).has('dev');
+  
+  if (isDevelopment) {
+    // Always reset products, recipes, testimonials from seedData in development
+    // This ensures changes to seedData.js reflect immediately
     saveToStorage('products', seedProducts);
-  }
-  if (!getFromStorage('recipes')) {
     saveToStorage('recipes', seedRecipes);
-  }
-  if (!getFromStorage('testimonials')) {
     saveToStorage('testimonials', seedTestimonials);
+  } else {
+    // Production: Only initialize if not exists
+    if (!getFromStorage('products')) {
+      saveToStorage('products', seedProducts);
+    }
+    if (!getFromStorage('recipes')) {
+      saveToStorage('recipes', seedRecipes);
+    }
+    if (!getFromStorage('testimonials')) {
+      saveToStorage('testimonials', seedTestimonials);
+    }
   }
+  
+  // These are always initialized if not exist
   if (!getFromStorage('users')) {
     saveToStorage('users', []);
   }
