@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <Link to="/" className="flex items-center space-x-2">
-                <img src="/public/marma's-logo copy.png" alt="Logo" className="h-8 w-8" />
+                <img src="/marma's-logo copy.png" alt="Logo" className="h-8 w-8" />
               </Link>
               <span className="text-xl font-bold text-accent-gold">marma's confectionary</span>
             </div>
