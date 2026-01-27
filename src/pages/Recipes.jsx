@@ -5,14 +5,14 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { useRecipeStore } from '../store';
 
 export default function Recipes() {
-  const { recipes, isLoading, fetchRecipes } = useRecipeStore();
+  const { recipes, isLoading, refreshRecipes } = useRecipeStore();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDifficulty, setSelectedDifficulty] = useState(null);
   const [selectedTags, setSelectedTags] = useState([]);
 
   useEffect(() => {
-    fetchRecipes();
-  }, [fetchRecipes]);
+    refreshRecipes();
+  }, [refreshRecipes]);
 
   // Get unique tags from all recipes
   const allTags = [...new Set(recipes.flatMap(recipe => recipe.tags))];
@@ -46,7 +46,7 @@ export default function Recipes() {
       {/* Header */}
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-charcoal mb-4">Recipe Library</h1>
-        <p className="text-xl text-gray-600">Unlock Auntie's secret family recipes</p>
+<p className="text-xl text-gray-600">Unlock Marma's secret family recipes</p>
       </div>
 
       {/* Search and Filters */}

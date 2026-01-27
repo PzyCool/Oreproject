@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { LayoutDashboard, Package, ChefHat, ShoppingBag, LogOut } from 'lucide-react';
+import { LayoutDashboard, Package, ChefHat, ShoppingBag, Star, Store, LogOut } from 'lucide-react';
 import { useAuthStore } from '../store';
 
 export default function AdminSidebar() {
@@ -15,14 +15,29 @@ export default function AdminSidebar() {
       exact: true
     },
     {
-      to: '/admin/products',
-      label: 'Products',
-      icon: Package
+      to: '/admin/popular-treats',
+      label: 'Popular Treats',
+      icon: Star
     },
     {
-      to: '/admin/recipes',
-      label: 'Recipes',
+      to: '/admin/bakery',
+      label: 'Our Bakery',
+      icon: Store
+    },
+    {
+      to: '/admin/nigerian-food',
+      label: 'Nigeria Food',
       icon: ChefHat
+    },
+    {
+      to: '/admin/popular-recipes',
+      label: 'Popular Recipes',
+      icon: ChefHat
+    },
+    {
+      to: '/admin/recipe-library',
+      label: 'Recipe Library',
+      icon: Package
     },
     {
       to: '/admin/orders',

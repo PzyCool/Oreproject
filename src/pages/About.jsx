@@ -67,7 +67,7 @@ export default function About() {
       <div className="bg-donut-brown text-white rounded-2xl p-8 text-center">
         <h2 className="text-2xl font-bold mb-4">Visit Us Today</h2>
         <p className="mb-6">
-          Come experience the warmth of Auntie's Bakery. We're located in the heart of Lagos,
+Come experience the warmth of Marma's Confectionery. We're located in the heart of Lagos,
           serving fresh baked goods daily.
         </p>
         <div className="text-sm">

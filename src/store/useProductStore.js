@@ -19,6 +19,19 @@ const useProductStore = create((set, get) => ({
     }
   },
 
+  // Force refresh - always fetches from API, bypassing cache
+  refreshProducts: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const products = await getProducts();
+      set({ products, isLoading: false });
+      return products;
+    } catch (error) {
+      set({ error: error.message, isLoading: false });
+      throw error;
+    }
+  },
+
   fetchProductById: async (id) => {
     set({ isLoading: true, error: null });
     try {

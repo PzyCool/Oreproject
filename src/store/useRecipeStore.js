@@ -21,6 +21,19 @@ const useRecipeStore = create((set, get) => ({
     }
   },
 
+  // Force refresh - always fetches from API
+  refreshRecipes: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      const recipes = await getRecipes();
+      set({ recipes, isLoading: false });
+      return recipes;
+    } catch (error) {
+      set({ error: error.message, isLoading: false });
+      throw error;
+    }
+  },
+
   fetchRecipeById: async (id) => {
     set({ isLoading: true, error: null });
     try {

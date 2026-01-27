@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Search, SlidersHorizontal } from 'lucide-react';
+import { Search, SlidersHorizontal, ChefHat } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
-import CategoryPills from '../components/CategoryPills';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useProductStore } from '../store';
+import { nigerianFoodCategories } from '../data/seedData';
 
-export default function Shop() {
+export default function NigeriaFood() {
   const { products, isLoading, refreshProducts } = useProductStore();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [sortBy, setSortBy] = useState('featured');
@@ -15,8 +15,13 @@ export default function Shop() {
     refreshProducts();
   }, [refreshProducts]);
 
+  // Filter only Nigerian food products
+  const nigerianFoodProducts = products.filter(product =>
+    ['swallows', 'soups', 'rice-dishes', 'proteins', 'nigerian-food'].includes(product.category)
+  );
+
   // Filter and sort products
-  const filteredProducts = products
+  const filteredProducts = nigerianFoodProducts
     .filter(product => {
       const matchesCategory = !selectedCategory || product.category === selectedCategory;
       const matchesSearch = !searchQuery ||
@@ -41,8 +46,11 @@ export default function Shop() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold text-charcoal mb-4">Our Bakery Shop</h1>
-        <p className="text-xl text-gray-600">Freshly baked goods made with love</p>
+        <div className="flex items-center justify-center mb-4">
+          <ChefHat className="h-12 w-12 text-donut-brown mr-3" />
+          <h1 className="text-4xl font-bold text-charcoal">Nigeria chops</h1>
+        </div>
+        <p className="text-xl text-gray-600">Authentic Nigeria cuisine made with love</p>
       </div>
 
       {/* Search and Filters */}
@@ -53,7 +61,7 @@ export default function Shop() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
             <input
               type="text"
-              placeholder="Search products..."
+              placeholder="Search Nigerian food..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-donut-brown focus:border-transparent"
@@ -76,11 +84,33 @@ export default function Shop() {
           </div>
         </div>
 
-        {/* Category Pills */}
-        <CategoryPills
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-        />
+        {/* Nigerian Food Category Pills */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          <button
+            onClick={() => setSelectedCategory(null)}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+              !selectedCategory
+                ? 'bg-donut-brown text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            }`}
+          >
+            All Nigeria chops
+          </button>
+
+          {nigerianFoodCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                selectedCategory === category.id
+                  ? 'bg-donut-brown text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {category.name}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Products Grid */}
@@ -90,7 +120,9 @@ export default function Shop() {
         </div>
       ) : filteredProducts.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
+          <ChefHat className="h-16 w-16 text-donut-brown mx-auto mb-4" />
+          <p className="text-gray-500 text-lg">No Nigeria chops found matching your criteria.</p>
+          <p className="text-gray-400 text-sm mt-2">Add Nigeria chops from the Admin panel</p>
         </div>
       ) : (
         <>
@@ -102,10 +134,11 @@ export default function Shop() {
 
           {/* Results count */}
           <div className="mt-8 text-center text-gray-600">
-            Showing {filteredProducts.length} product{filteredProducts.length !== 1 ? 's' : ''}
+            Showing {filteredProducts.length} Nigeria chops item{filteredProducts.length !== 1 ? 's' : ''}
           </div>
         </>
       )}
     </div>
   );
 }
+

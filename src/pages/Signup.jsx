@@ -101,7 +101,7 @@ export default function Signup() {
         <div className="flex justify-center mb-4">
           <ChefHat className="h-12 w-12 text-donut-brown" />
         </div>
-        <h1 className="text-3xl font-bold text-charcoal mb-2">Join Auntie's Bakery</h1>
+<h1 className="text-3xl font-bold text-charcoal mb-2">Join Marma's Confectionery</h1>
         <p className="text-gray-600">Create your account to start ordering</p>
         {checkoutMessage && (
           <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">

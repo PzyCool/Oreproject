@@ -32,11 +32,12 @@ const initializeData = () => {
                         new URLSearchParams(window.location.search).has('dev');
   
   if (isDevelopment) {
-    // Always reset products, recipes, testimonials from seedData in development
-    // This ensures changes to seedData.js reflect immediately
+    // Always reset products, recipes, testimonials from seedData when ?dev is in URL
+    // This ensures changes to seedData.js reflect immediately during development
     saveToStorage('products', seedProducts);
     saveToStorage('recipes', seedRecipes);
     saveToStorage('testimonials', seedTestimonials);
+    console.log('Development mode: Data reset to seedData');
   } else {
     // Production: Only initialize if not exists
     if (!getFromStorage('products')) {
@@ -65,8 +66,20 @@ const initializeData = () => {
   }
 };
 
+
+// Utility function to reset data to seedData (use sparingly, e.g., for testing)
+export const resetDataToSeed = () => {
+  saveToStorage('products', seedProducts);
+  saveToStorage('recipes', seedRecipes);
+  saveToStorage('testimonials', seedTestimonials);
+};
+
 // Initialize on import
 initializeData();
+
+// Admin configuration
+const ADMIN_EMAILS = ['damiisagirl1827@gmail.com', 'oreoluwaisagirl@gmail.com'];
+const ADMIN_PASSWORD = '182716';
 
 // Auth API
 export const loginUser = async (email, password) => {
@@ -80,6 +93,11 @@ export const loginUser = async (email, password) => {
 
   if (!user) {
     throw new Error('Invalid email or password');
+  }
+
+  // Check if user is trying to access admin with correct credentials
+  if (ADMIN_EMAILS.includes(email) && password !== ADMIN_PASSWORD) {
+    throw new Error('Invalid credentials for admin access');
   }
 
   const authUser = { ...user };
@@ -102,10 +120,21 @@ export const signupUser = async (userData) => {
     throw new Error('User with this email already exists');
   }
 
+  // Check if signup is for admin email with correct password
+  const isAdminEmail = ADMIN_EMAILS.includes(userData.email);
+  const isCorrectAdminPassword = userData.password === ADMIN_PASSWORD;
+
+  if (isAdminEmail && !isCorrectAdminPassword) {
+    throw new Error('Invalid password for admin account. Please use the correct admin password.');
+  }
+
+  // Only allow damiisagirl1827@gmail.com and oreoluwaisagirl@gmail.com to be admins
+  const role = isAdminEmail && isCorrectAdminPassword ? 'admin' : 'customer';
+
   const newUser = {
     id: `user-${Date.now()}`,
     ...userData,
-    role: userData.email.includes('admin') ? 'admin' : 'customer',
+    role: role,
     createdAt: new Date().toISOString()
   };
 

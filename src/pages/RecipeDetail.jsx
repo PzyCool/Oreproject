@@ -154,8 +154,8 @@ export default function RecipeDetail() {
             </div>
             <h2 className="text-2xl font-bold text-charcoal mb-2">Unlock This Recipe</h2>
             <p className="text-gray-600 mb-6 max-w-md mx-auto">
-              Get access to the full recipe including detailed ingredients, step-by-step instructions,
-              and professional tips from Auntie's kitchen.
+Get access to the full recipe including detailed ingredients, step-by-step instructions,
+              and professional tips from Marma's kitchen.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

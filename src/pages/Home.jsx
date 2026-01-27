@@ -9,13 +9,13 @@ import { useRecipeStore } from '../store';
 import { seedTestimonials } from '../data/seedData';
 
 export default function Home() {
-  const { products, fetchProducts } = useProductStore();
-  const { recipes, fetchRecipes } = useRecipeStore();
+  const { products, refreshProducts } = useProductStore();
+  const { recipes, refreshRecipes } = useRecipeStore();
 
   useEffect(() => {
-    fetchProducts();
-    fetchRecipes();
-  }, [fetchProducts, fetchRecipes]);
+    refreshProducts();
+    refreshRecipes();
+  }, [refreshProducts, refreshRecipes]);
 
   // Show featured products first, then fill with popular products if needed
   const featuredProducts = products
@@ -34,7 +34,7 @@ export default function Home() {
               <span className="text-donut-brown"> Secret Recipes</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Discover Auntie's family recipes and order delicious baked goods.
+Discover Marma's family recipes and order delicious baked goods.
               From chocolate chip cookies to artisan sourdough, we bring joy to your table.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -114,7 +114,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-charcoal mb-4">Popular Recipes</h2>
-            <p className="text-gray-600">Unlock Auntie's secret family recipes</p>
+<p className="text-gray-600">Unlock Marma's secret family recipes</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {popularRecipes.map((recipe) => (
@@ -172,7 +172,7 @@ export default function Home() {
             Custom orders, large quantities, or special requests? Message us on WhatsApp!
           </p>
           <a
-            href="https://wa.me/2341234567890"
+href="https://wa.me/2348103642010"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-medium hover:bg-green-700 transition-colors"

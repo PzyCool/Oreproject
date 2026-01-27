@@ -27,6 +27,7 @@ export default function Navbar() {
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/shop', label: 'Shop' },
+    { to: '/nigeria-food', label: 'Nigeria Food' },
     { to: '/recipes', label: 'Recipes' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },

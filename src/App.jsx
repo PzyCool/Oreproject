@@ -24,9 +24,14 @@ import Orders from './pages/Orders';
 import PurchasedRecipes from './pages/PurchasedRecipes';
 import Profile from './pages/Profile';
 import AdminDashboard from './pages/AdminDashboard';
-import AdminProducts from './pages/AdminProducts';
-import AdminRecipes from './pages/AdminRecipes';
+import AdminPopularTreats from './pages/AdminPopularTreats';
+import AdminBakery from './pages/AdminBakery';
+import AdminPopularRecipes from './pages/AdminPopularRecipes';
+import AdminRecipeLibrary from './pages/AdminRecipeLibrary';
 import AdminOrders from './pages/AdminOrders';
+import NigeriaFood from './pages/NigeriaFood';
+import AdminNigeriaFood from './pages/AdminNigeriaFood';
+
 
 export default function App() {
   return (
@@ -47,6 +52,7 @@ export default function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="nigeria-food" element={<NigeriaFood />} />
         </Route>
 
         {/* Auth Routes */}
@@ -64,8 +70,11 @@ export default function App() {
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
-          <Route path="products" element={<AdminProducts />} />
-          <Route path="recipes" element={<AdminRecipes />} />
+          <Route path="popular-treats" element={<AdminPopularTreats />} />
+          <Route path="bakery" element={<AdminBakery />} />
+          <Route path="nigerian-food" element={<AdminNigeriaFood />} />
+          <Route path="popular-recipes" element={<AdminPopularRecipes />} />
+          <Route path="recipe-library" element={<AdminRecipeLibrary />} />
           <Route path="orders" element={<AdminOrders />} />
         </Route>
       </Routes>

@@ -50,7 +50,7 @@ export default function Login() {
           <ChefHat className="h-12 w-12 text-donut-brown" />
         </div>
         <h1 className="text-3xl font-bold text-charcoal mb-2">Welcome Back</h1>
-        <p className="text-gray-600">Sign in to your Auntie's Bakery account</p>
+<p className="text-gray-600">Sign in to your Marma's Confectionery account</p>
         {checkoutMessage && (
           <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
             <p className="text-blue-800 text-sm">{checkoutMessage}</p>
